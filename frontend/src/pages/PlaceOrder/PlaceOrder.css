@@ -1,0 +1,128 @@
+
+.placeorder-container
+{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    
+    
+}
+.delivery-info
+{
+    width: 40%;
+}
+.delivery-info-form button
+{
+    color: white;
+    background-color: tomato;
+    border: none;
+    padding: 12px 0px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.delivery-info-form
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.delivery-info-form input
+{
+    padding: 15px;
+    outline: none;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    
+    
+}
+
+
+
+.city-state, .zip-country, .first-last-name
+{
+    display: flex;
+    gap: 20px;
+    
+}
+.city-state input, .zip-country input, .first-last-name input
+
+{
+    width: 75%;
+    outline: none;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+}
+
+.placeorder-container .cart-bottom
+{
+    width: 500px;
+   
+}
+
+.address-total 
+{
+    font-size: 30px;
+    color: black;
+}
+@media (max-width:750px) {
+
+    .placeorder-container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .placeorder-container {
+        margin-top: 50px; /* Reduced top margin for smaller screens */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items for a better mobile view */
+    }
+    .delivery-info, .placeorder-container .cart-bottom {
+        width: 100%; /* Full width for better use of space */
+    }
+    .delivery-info-form button {
+        padding: 10px 0px; /* Adjust padding for button */
+    }
+    .city-state input, .zip-country input, .first-last-name input {
+        width: 100%; /* Full width inputs for better mobile usability */
+    }
+    .address-total {
+        font-size: 24px; /* Adjust font size for readability on smaller screens */
+    }
+    .cart-total {
+        padding: 15px; /* Add padding for better spacing */
+        box-sizing: border-box; /* Include padding in the width calculation */
+    }
+    .cart-total h2 {
+        font-size: 18px; /* Adjust the heading size for mobile devices */
+    }
+    .cart-total-details {
+        flex-direction: column; /* Stack the subtotal and delivery fee details */
+        align-items: start; /* Align the text to the start */
+        margin-bottom: 10px; /* Add some space between the details */
+    }
+    .cart-total-details p,
+    .cart-total-details b {
+        width: 100%; /* Full width for the text */
+        text-align: left; /* Align the text to the left */
+    }
+    .address-total {
+        font-size: 24px; /* Adjust the total amount font size for readability */
+    }
+}
+

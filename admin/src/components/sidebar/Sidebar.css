@@ -1,0 +1,32 @@
+.sidebar
+{
+    margin-left: 55px;
+    border-right: 1px solid gray;
+    width: 15%;
+    height: auto;
+    padding-top: 55px;
+}
+
+.sidebar-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-options
+{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid grey;
+  border-right:0px;
+  padding: 8px;
+  border-radius: 2px;
+}
+.sidebar-options.active
+{
+  background-color: #f9d3cc;
+  
+}

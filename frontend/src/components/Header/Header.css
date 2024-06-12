@@ -1,0 +1,106 @@
+.header {
+    height: 35vw;
+    width: 80vw;
+    background: url('../../../../frontend/public/header_img.png') no-repeat;
+    background-size: contain;
+    position: relative;
+    display: flex; /* Add display: flex; to make child positioning easier */
+}
+
+.header-contents {
+    position: absolute;
+    bottom: 10%; /* Align to the bottom */
+    left: 10px; /* Adjust left position as needed */
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    max-width: 50%;
+    left:6vw;
+    animation: fadeIn 3s;
+}
+.header-contents h2{
+
+    font-weight: 500;
+    color:white;
+    font-size: max(4.5vw,22px);
+}
+
+.header-contents p{
+
+    color:white;
+    font-weight: 400;
+}
+
+.header-button
+{   position:relative;
+    bottom: 10%;
+    background-color: #fff4f2;
+    padding: 13px;
+    border-radius: 22px;
+    border: 1px solid tomato;
+    width: 8vw;
+}
+.header-button:hover
+{
+    background-color: #f0d3ce;
+}
+
+
+@media (max-width:1050px) {
+    
+    .header
+    {
+        height: 38vw;
+    }
+    .header-contents
+    {
+        max-width: 40%;
+    }
+
+}
+
+@media (max-width:750px) {
+    
+    .header
+    {
+        height: 38vw;
+    }
+    .header-contents
+    {
+        max-width: 55%;
+    }
+    .header-contents p
+    {
+        display: none;
+    }
+    .header-contents button 
+    {
+        /* padding: 3vw 4vw; */
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+  
+    .header-contents {
+        position: relative; /* Change to relative positioning */
+        bottom: auto; /* Reset bottom positioning */
+        left: auto; /* Reset left positioning */
+        padding: 10px; /* Add some padding */
+        max-width: 100%; /* Full width */
+        animation: none; /* Remove animation for simplicity */
+    }
+    .header-contents h2 {
+        font-size: 5vw; /* Adjust font size for smaller screens */
+    }
+    .header-button {
+        width: auto; /* Full width */
+        padding: 10px; /* Adjust padding */
+        margin: 0 auto; /* Center the button */
+    }
+    .header-button:hover {
+        background-color: #f0d3ce; /* Keep the hover effect */
+    }
+}
