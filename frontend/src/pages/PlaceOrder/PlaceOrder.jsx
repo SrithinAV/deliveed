@@ -3,6 +3,7 @@ import './PlaceOrder.css'
 import { StoreContext } from '../../context/storeContext'
 import axios from 'axios'
 import Order from '../Order/Order'
+// import Location from '../../components/location/Location'
 
 
 const PlaceOrder = ({setSignIn}) => {
@@ -66,6 +67,8 @@ const PlaceOrder = ({setSignIn}) => {
     console.log(orderData);
 
     const response = await axios.post(`${Url}/api/order/place`,{orderData},{headers:{tocken}});
+    const addAddress = await axios.post(`${Url}/api/user/addAddress`,{address},{headers:{tocken}});
+    console.log(addAddress.data.success);
     console.log(response.data.success);
 
     if(response.data.success)
@@ -85,13 +88,37 @@ const PlaceOrder = ({setSignIn}) => {
 
 
   }
+
+  const fetchAddress = async()=>
+  {
+    console.log(tocken);
+    if(tocken)
+    {
+    const response = await axios.post(`${Url}/api/user/address`,{},{headers:{tocken}});
+    console.log("address: ",response.data.data);
+    }
+  }
+ 
+  useEffect(()=>
+  {
+    const fetchAddressCall = async ()=>
+    {
+      await fetchAddress();
+    }
+    fetchAddressCall();
+  },[]);
+
   useEffect(() => {
+
     setOrderData((prev) => ({ ...prev, address: address }));
   }, [address]);
 
 
   return (
+
     <div className='placeorder'>
+     
+      
       <div className="placeorder-container">
 
         <div className="delivery-info">
@@ -123,6 +150,7 @@ const PlaceOrder = ({setSignIn}) => {
         <div className="placeorder-right">
         <div className="cart-bottom">
         <div className="cart-total">
+        
           <h2>Cart Totals</h2>
 
           <div className="cart-total-details">
@@ -138,6 +166,7 @@ const PlaceOrder = ({setSignIn}) => {
           <div className="cart-total-details">
             <b className='address-total'>Total </b>
             <b className='address-total'> ₹{getTotalCartAmount()===0?'0':getTotalCartAmount() + 60}</b>
+  
           </div>
           
         </div>

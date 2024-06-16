@@ -106,4 +106,35 @@ const registerUser = async (req,res)=>
     }
 
 }
-export{loginUser, registerUser}
+
+const addAddress = async(req,res)=>
+{
+    const {address} = req.body;
+    try {
+        await userModel.findByIdAndUpdate(req.body.userId,{address});
+        res.json({success:true});
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"error"});
+    }
+}
+
+const getAddress = async (req,res)=>
+{
+    
+    try
+    {
+    const user = await userModel.find({_id:req.body.userId},{userId:1,address:1}).lean(); 
+    console.log("User: ",user);
+    res.json({success:true,data:user})
+    
+    }
+    catch(error)
+    {
+        res.json({success:false, message:"error"});
+        console.log(error);
+    }
+
+
+}
+export{loginUser, registerUser, getAddress, addAddress}

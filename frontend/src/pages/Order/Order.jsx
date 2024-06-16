@@ -6,6 +6,7 @@ import OrderDisplay from '../../components/OrderDisplay/OrderDisplay';
 
 
 
+
 const Order = () => {
 
   const [orderData, setOrderData]= useState([]);
@@ -57,9 +58,7 @@ const Order = () => {
               {
                 return <OrderDisplay name={item.name} image={item.image} total={item.total} status={item.status} time={item.time} />
               })}
-            </div>
-
-
+            </div>            
         </div>
       
     </div>

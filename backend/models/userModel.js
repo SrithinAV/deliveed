@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema(
         password:{type:String, required:true},
         cartData:{type:Object, default:{}},
         orders:[{type:mongoose.Schema.Types.ObjectId, ref:"order"}],
+        address:{type:Object, default:{}},
 
     },{minimize:false}
 )
