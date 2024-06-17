@@ -125,7 +125,6 @@ const getAddress = async (req,res)=>
     try
     {
     const user = await userModel.find({_id:req.body.userId},{userId:1,address:1}).lean(); 
-    console.log("User: ",user);
     res.json({success:true,data:user})
     
     }

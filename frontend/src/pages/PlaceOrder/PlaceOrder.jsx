@@ -95,7 +95,8 @@ const PlaceOrder = ({setSignIn}) => {
     if(tocken)
     {
     const response = await axios.post(`${Url}/api/user/address`,{},{headers:{tocken}});
-    console.log("address: ",response.data.data);
+    SetAddress(response.data.data[0].address);
+    console.log("address: ",response.data.data[0].address);
     }
   }
  
