@@ -6,7 +6,7 @@ import OrderList from '../orderList/OrderList.jsx';
 
 const Home = () => {
 
-  const Url = 'http://localhost:4000';
+  const Url = 'https://deliveed.adaptable.app';
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {

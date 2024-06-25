@@ -12,7 +12,7 @@ const Add = ({Url}) => {
     name:"",
     description:"",
     price:"",
-    category:"salad"});
+    category:"Veg"});
 
     const onChangeHandler = (event)=>
     {
@@ -23,6 +23,8 @@ const Add = ({Url}) => {
 
     const onSubmitHandler = async() =>
     {
+
+      // event.preventDefault();
        
        const formDate = new FormData();
        formDate.append("name",data.name); 
@@ -31,7 +33,7 @@ const Add = ({Url}) => {
        formDate.append("category",data.category);
        formDate.append("image",image);
        
-       console.log(formDate);
+      //  console.log(formDate);
        const response = await axios.post(`${Url}/api/food/add`,formDate);
        if(response.data.success)
        {
@@ -40,7 +42,7 @@ const Add = ({Url}) => {
               name:"",
               description:"",
               price:"",
-              category:"salad"
+              category:"Veg"
             }
           )
           setImage(false);
@@ -53,10 +55,10 @@ const Add = ({Url}) => {
        }
 
     }
-    useEffect(()=>
-    {
-       console.log(data);
-    },[data])
+    // useEffect(()=>
+    // {
+    //    console.log(data);
+    // },[data])
   return (
     <div className='add'>
       <div className="add-container">
@@ -88,14 +90,14 @@ const Add = ({Url}) => {
            <div className="add-category flex-col">
             <p>Product Category</p>
             <select onChange={onChangeHandler} name='category'>
-              <option value="Salad">Salad</option>
-              <option value="Role">Role</option>
-              <option value="Dessert">Dessert</option>
-              <option value="Sandwich">Sandwich</option>
-              <option value="Cake">Cake</option>
-              <option value="Pure Veg">Pure Veg</option>
-              <option value="Pasta">Pasta</option>
-              <option value="Noodles">Noodles</option>
+              <option value="Veg">Veg</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Fish">Fish</option>
+              <option value="Juice">Juice</option>
+              <option value="Shake">Shake</option>
+              <option value="Snaks">Snaks</option>
+              {/* <option value="Pasta">Pasta</option>
+              <option value="Noodles">Noodles</option> */}
 
             </select>
           </div>

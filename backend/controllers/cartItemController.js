@@ -66,6 +66,11 @@ const getCart = async(req,res)=>
     try {
         const user = await userModel.findById(req.body.userId);
         let cartData = user.cartData;
+
+        if(cartData == null)
+        {
+            console.log("Nothing");
+        }
     
         res.json({success:true, cartData});
 
