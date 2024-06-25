@@ -19,7 +19,7 @@ const port = process.env.PORT;
 
 const corsOptions = {
     origin: (origin, callback) => {
-      if (['https://www.deliveed.com', 'http://localhost:3000', 'http://localhost:5173', ].indexOf(origin) !== -1 || !origin) {
+      if (['https://www.deliveed.com', 'http://localhost:3000', 'http://localhost:5173', 'http://localhost:3001'].indexOf(origin) !== -1 || !origin) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
@@ -31,7 +31,7 @@ const corsOptions = {
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per windowMs
+    max: 50, // Limit each IP to 100 requests per windowMs
     message: 'Too many requests from this IP, please try again after 15 minutes',
   });
   
