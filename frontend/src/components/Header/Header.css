@@ -1,5 +1,6 @@
 .header {
-    height: 35vw;
+    border-radius: 10px;
+    height: 34vw;
     width: 80vw;
     background: url('../../../../frontend/public/header_img.png') no-repeat;
     background-size: contain;

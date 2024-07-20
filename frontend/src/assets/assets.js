@@ -113,7 +113,7 @@ export const menu_list = [
     // },
     {
         menu_name: "Snaks",
-        menu_image: menu_8
+        menu_image: menu_6
     }]
 
 export const food_list = [

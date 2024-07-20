@@ -13,7 +13,7 @@ import SignIn from './components/signin/SignIn'
 
 
 const App = () => {
-  // const Url = "https://deliveed.adaptable.app";
+ 
   const Url = "http://localhost:4000";
 
   const [signIn, setSignin] = useState(false);
